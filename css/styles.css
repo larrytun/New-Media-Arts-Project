@@ -1,0 +1,210 @@
+.content-wrapper {
+  max-width: 1000px;
+  margin: auto;
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);}
+  to {
+      -webkit-transform: rotate(3600deg);
+    -moz-transform: rotate(3600deg);
+      -ms-transform: rotate(3600deg);
+      -o-transform: rotate(3600deg);
+  }
+}
+
+@keyframes colors {
+  0%   {box-shadow: 25px 20px #ff003b;}
+  10%  {box-shadow: -15px 10px #ff003b;}
+  25%  {box-shadow: 15px -10px #00ff50;}
+  30%  {box-shadow:  -15px -10px blue;}
+  50%  {box-shadow: -25px -20px #ff003b;}
+  70%  {box-shadow: -45px 10px blue;}
+  85%  {box-shadow: 15px 10px #ff003b;}
+  90%  {box-shadow:  -15px 25px #00ff50;}
+  100% {box-shadow: 25px 20px #ff003b;}
+}
+
+@keyframes text-colors {
+  0%   {color: #ff003b;}
+  10%  {color: #ff003b;}
+  25%  {color: #00ff50;}
+  30%  {color: blue;}
+  50%  {color: #ff003b;}
+  70%  {color: blue;}
+  85%  {color: #ff003b;}
+  90%  {color: #00ff50;}
+  100% {color: #ff003b;}
+}
+
+.main-content {
+  max-width: 600px;
+  margin: auto;
+  margin-top: 150px;
+  animation-name: spin;
+  animation-duration: 90s;
+  animation-iteration-count: infinite;
+}
+
+#bgVideo {
+ position: absolute;
+ z-index: -1;
+ top: 0px;
+ left: 0px;
+ min-width: 100%;
+ min-height: 100%;
+}
+
+.button {
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  -webkit-transition: opacity .75s;
+  transition: opacity .75s;
+  animation-name: spin;
+  animation-duration: 90s;
+  animation-iteration-count: infinite;
+  opacity: 1;
+  background-color: white;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.secondary-content {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  visibility: hidden;
+  width: 100%;
+  padding-left:7px;
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
+  opacity: 0;
+}
+
+.secondary-content.appear {
+  visibility: visible;
+  opacity: 1;
+}
+
+.secondary-content.appear.gone {
+  opacity: 0;
+}
+
+.buttonb {
+  width: calc(100%/5 - 6px);
+  height: 50px;
+  margin: 0;
+  cursor: pointer;
+  -webkit-transition: opacity .75s;
+  transition: opacity .75s;
+  opacity: 1;
+  background-color: white;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.buttonb.gone {
+  opacity: 0;
+  cursor: default;
+}
+
+.buttonb.theone {
+  animation-name: text-colors;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+.button.gone {
+  opacity: 0;
+}
+
+.button1 {
+  margin-right: 200px;
+  margin-bottom: 100px;
+  margin-left: 200px;
+}
+
+.button2 {
+  float: left;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.button3 {
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.video {
+  position: absolute;
+  top: 150px;
+  left: calc(50% - 280px);
+  visibility: hidden;
+  -webkit-transition: opacity 3s;
+  transition: opacity 3s;
+  transition-delay: .5s;
+  animation-name: colors;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  opacity: 0;
+}
+
+.video2 {
+  display: none;
+}
+
+h1 {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  display: none;
+  margin: 0 8px;
+  padding: 8px;
+  animation-name: text-colors;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  text-align: center;
+  background-color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+}
+
+.video.appear {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 615px) {
+
+  body {
+    background-image: url("../img/trip.png");
+  }
+
+  video {
+    display: none;
+  }
+
+  .video {
+    display: none;
+  }
+
+  .video2 {
+    display: block;
+    width: 100%;
+    margin-top: 70px;
+  }
+
+  .main-content {
+    display: none;
+  }
+
+  .secondary-content {
+    display: none;
+  }
+
+  h1 {
+    display: block;
+  }
+}
